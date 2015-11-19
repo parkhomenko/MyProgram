@@ -1,109 +1,121 @@
 package com.company;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-//       Improved calculater Problem 0
+        System.out.println("Enter your number ");
         Scanner sc = new Scanner(System.in);
-        System.out.println("enter two numbers");
-        double a = sc.nextDouble();
-        double b = sc.nextDouble();
-        Scanner sc1 = new Scanner(System.in);
-        System.out.println("enter + or - or * or / for result");
-        String command = sc1.nextLine();
+        int number = sc.nextInt();
+        int arrLength = number;
+        System.out.println("your number is " + number);
+        int counter = 0;
+        while (arrLength / 10 >= 0 && arrLength != 0) {
+            ++counter;
+            arrLength = arrLength / 10;
+        }
 
-        if (command.equals("+")) {
-            System.out.println("result =" + (a + b));
-        } else if (command.equals("-")) {
-            System.out.println("result =" + (a - b));
-        } else if (command.equals("*")) {
-            System.out.println("result =" + (a * b));
-        } else if (command.equals("/") && b == 0) {
-            System.out.println("Error dividing by 0");
-        } else {
-            System.out.println("result =" + (a / b));
+        int arr[] = new int[counter];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = number % 10;
+            number = number / 10;
         }
-//        problem 1 - average amount for any quantity of numbers
+        System.out.println("your backwards number  ");
+        for (int j = 0; j < arr.length; j++) {
+            System.out.print(arr[j]);
+        }
         System.out.println();
-        System.out.println("------------------------");
-        System.out.println("enter quantity of numbers to find average");
-        Scanner sc3 = new Scanner(System.in);
-        int quontinyOfNumbers = sc3.nextInt();
-        double[] array = new double[quontinyOfNumbers];
-        for (int i = 0; i < array.length; i++) {
-            System.out.println("enter your numbers");
-            array[i] = sc3.nextDouble();
+        boolean b = true;
+        for (int k = 0; k < arr.length / 2; k++) {
+            if (arr[k] != arr[arr.length - 1]) {
+                b = false;
+                break;
+            }
         }
-        System.out.println("your numbers are");
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + ", ");
-        }
-        double sum = 0;
-        for (int i = 0; i < array.length; i++) {
-            sum = array[i] + sum;
-        }
-        System.out.println("sum = " + sum + " average amount =" + (sum / quontinyOfNumbers));
+        if (b)
+            System.out.println("your number is palindromic");
+        else System.out.println("your number is not palindromic");
 
-//    Problem2 Bank deposit and interest rate
-        Scanner sc4 = new Scanner(System.in);
-        System.out.println();
-        System.out.println("------------------------");
-        System.out.println("enter your deposit");
-        double deposit = sc4.nextDouble();
-        System.out.println("enter your yearly%");
-        int intereset = sc4.nextInt();
-        System.out.println("enter your term");
-        int term = sc4.nextInt();
-        System.out.println("your deposit is " + deposit + "; your yearly % is " + intereset + "; your term is " + term);
-        double yearsarray[] = new double[term];
-        yearsarray[0]=deposit;
-        for (int i = 1; i < yearsarray.length; i++) {
-            yearsarray[i] = yearsarray[i-1] +(yearsarray[i-1]*intereset/100.0);
+        System.out.println("Array 10x10");
+        int arr10x10[][] = new int[10][10];
+        for (int l = 0; l < arr10x10.length; l++) {
+            for (int m = 0; m < arr10x10[l].length; m++) {
+                arr10x10[l][m] = (int) (Math.random() * 40 - 20);
+            }
         }
-        System.out.println("your yearly total amount will be ");
-        for (int i = 0; i < yearsarray.length; i++) {
-            System.out.print(yearsarray[i] + ", ");
+
+        for (int l = 0; l < arr10x10.length; l++) {
+            int sumString = 0;
+            for (int m = 0; m < arr10x10[l].length; m++) {
+                sumString += arr10x10[l][m];
+            }
+            System.out.println("sum of string = " + sumString);
+
         }
-        double profitarray[] = new double[term];
-        profitarray[0]=0;
-        for (int i = 1; i < profitarray.length; i++) {
-            profitarray[i] = yearsarray[i] -yearsarray[i-1];
+
+
+        for (int l = 0; l < arr10x10.length; l++) {
+            for (int j = 0; j < arr10x10[l].length; j++) {
+                System.out.print(arr10x10[l][j] + ",");
+            }
+            System.out.println();
         }
-        System.out.println();
-        System.out.println("your yearly profit will be ");
-        for (int i = 0; i < profitarray.length; i++) {
-            System.out.print(profitarray[i] + ", ");
+        int max = arr10x10[0][0];
+        for (int l = 0; l < arr10x10.length; l++) {
+            for (int m = 0; m < arr10x10[l].length; m++) {
+                if (arr10x10[l][m] > max)
+                    max = arr10x10[l][m];
+            }
         }
-//       Problem 4,5,6
-        Scanner sc5 = new Scanner(System.in);
-        System.out.println();
-        System.out.println("------------------------");
-        System.out.println("enter your number");
-        double number = sc5.nextDouble();
-        if (number % 2 == 0) {
-            System.out.println("your number is even");
-        } else {
-            System.out.println("your number is odd");
-        }
-        int y, n;
-        boolean isComposite = false;
-        for (y = 2; y < number; y++) {
-            if (number % y == 0)
-                isComposite = true;
-            break;
-        }
-        if (isComposite) {
-            System.out.println("composite number");
-        } else {
-            System.out.println("simple number");
+        System.out.println("max number =" + max);
+        for (int l = 0; l < arr10x10.length; l++) {
+            for (int j = 0; j < arr10x10[l].length; j++) {
+            }
         }
         System.out.println();
-        System.out.println("dividers are:");
-        for (n = 1; n <= number; n++) {
-            if (number % n == 0)
-                System.out.print(n + " ,");
+
+        int min = arr10x10[0][0];
+        for (int l = 0; l < arr10x10.length; l++) {
+            for (int m = 0; m < arr10x10[l].length; m++) {
+                if (arr10x10[l][m] < min)
+                    min = arr10x10[l][m];
+            }
         }
+        System.out.println("min number =" + min);
+        System.out.println();
+        int sum = arr10x10[0][0];
+        for (int l = 0; l < arr10x10.length; l++) {
+            for (int m = 0; m < arr10x10[l].length; m++) {
+                sum = arr10x10[l][m] + sum;
+            }
+        }
+        System.out.println("sum =" + sum);
+        System.out.println();
+        double avrg = arr10x10[0][0];
+        for (int l = 0; l < arr10x10.length; l++) {
+            for (int m = 0; m < arr10x10[l].length; m++) {
+                avrg = sum / 100.0;
+            }
+        }
+        System.out.println("Average =" + avrg);
+        System.out.println();
+        int negative = 0;
+        int posetive = 0;
+        for (int l = 0; l < arr10x10.length; l++) {
+            for (int m = 0; m < arr10x10[l].length; m++) {
+                if (arr10x10[l][m] < 0) {
+                    negative++;
+                } else {
+                    posetive++;
+                }
+            }
+        }
+        System.out.println("Negative numbers =" + negative);
+        System.out.println("Positive numbers =" + posetive);
+        System.out.println();
+
+
     }
 }
