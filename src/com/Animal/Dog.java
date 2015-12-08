@@ -3,8 +3,9 @@ package com.Animal;
 /**
  * Created by Mike on 11/26/2015.
  */
-public class Dog extends Domestic {
+public class Dog extends Domestic implements Roarable{
     boolean isTrained;
+
 
     public Dog(int id, int age, double weight, String color, String name, boolean isVaccinated, boolean isTrained) {
         super(id, age, weight, color, name, isVaccinated);
@@ -25,4 +26,8 @@ public class Dog extends Domestic {
         return result;
     }
 
+    @Override
+    public void roar() {
+        System.out.println("Dog Roar");
+    }
 }

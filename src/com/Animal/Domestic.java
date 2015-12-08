@@ -39,4 +39,5 @@ public abstract class Domestic extends Animal {
     public void setIsVaccinated(boolean isVaccinated) {
         this.isVaccinated = isVaccinated;
     }
+
 }
