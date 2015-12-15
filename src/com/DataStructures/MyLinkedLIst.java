@@ -7,10 +7,10 @@ import java.util.Iterator;
 /**
  * Created by Mike on 12/15/2015.
  */
-public class MyLinkedLIstTEST implements Iterable<Object> {
+public class MyLinkedLIst implements Iterable<Object> {
     private Element firstElement;
 
-    public MyLinkedLIstTEST() {
+    public MyLinkedLIst() {
         firstElement = null;
     }
 
@@ -174,7 +174,7 @@ public class MyLinkedLIstTEST implements Iterable<Object> {
 
     public boolean MY_INCORRECT_retainAll(Collection c) {
         boolean result = false;
-        MyLinkedLIstTEST temp = new MyLinkedLIstTEST();
+        MyLinkedLIst temp = new MyLinkedLIst();
         Element currentElement = firstElement;
 
         while (currentElement != null) {
@@ -193,7 +193,7 @@ public class MyLinkedLIstTEST implements Iterable<Object> {
 
     public boolean retainAll(Collection c) {
         boolean result = false;
-        MyLinkedLIstTEST temp = new MyLinkedLIstTEST();
+        MyLinkedLIst temp = new MyLinkedLIst();
         Element currentElement = firstElement;
 
         while (currentElement != null) {
@@ -220,7 +220,7 @@ public class MyLinkedLIstTEST implements Iterable<Object> {
     }
 
     public static void main(String[] args) {
-        MyLinkedLIstTEST list = new MyLinkedLIstTEST();
+        MyLinkedLIst list = new MyLinkedLIst();
 //        System.out.println(list);
 //        System.out.println(list.size());
         list.add(2.5);
