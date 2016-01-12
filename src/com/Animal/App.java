@@ -29,9 +29,8 @@ public class App {
         arr.add(puss);
         arr.add(giraffe);
 
-        for (int i = 0; i < arr.size(); i++) {
-            arr.get(i).voice();
-
+        for (Animal item:arr) {
+            item.voice();
         }
     }
 
