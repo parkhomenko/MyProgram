@@ -8,14 +8,14 @@ import org.junit.Test;
  * Created by Mike on 12/8/2015.
  */
 public class LinkedListTest2 {
-    MyLinkedList linkedList;
+    MyLinkedLIst linkedList;
    @Before
    public void setUp(){
-       MyLinkedList linkedList = new MyLinkedList();
+       MyLinkedLIst linkedList = new MyLinkedLIst();
    }
     @Test
     public void testSizeEmpty() {
-        MyLinkedList linkedList = new MyLinkedList();
+        MyLinkedLIst linkedList = new MyLinkedLIst();
         int size = linkedList.size();
         Assert.assertEquals(0, size);
 
@@ -23,7 +23,7 @@ public class LinkedListTest2 {
 
     @Test
     public void testSizeNotEmpty() {
-        MyLinkedList linkedList = new MyLinkedList();
+        MyLinkedLIst linkedList = new MyLinkedLIst();
         Integer first =1;
         Integer second =2;
         linkedList.add(first);
