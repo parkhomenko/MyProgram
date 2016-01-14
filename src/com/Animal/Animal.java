@@ -27,6 +27,32 @@ public abstract class Animal {
         return "Hello";
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Animal animal = (Animal) o;
+
+        if (getId() != animal.getId()) return false;
+        if (getAge() != animal.getAge()) return false;
+        if (Double.compare(animal.getWeight(), getWeight()) != 0) return false;
+        return getColor().equals(animal.getColor());
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = getId();
+        result = 31 * result + getAge();
+        temp = Double.doubleToLongBits(getWeight());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + getColor().hashCode();
+        return result;
+    }
+
     public int getId() {
         return id;
     }

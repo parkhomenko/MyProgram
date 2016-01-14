@@ -12,6 +12,16 @@ public class Cat extends Domestic {
     public Cat() {
     }
 
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
     public String phrase() {
         String result = super.phrase() + ". Meow!";
 

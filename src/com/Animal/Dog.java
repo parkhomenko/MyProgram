@@ -15,6 +15,16 @@ public class Dog extends Domestic implements Roarable{
     public Dog() {
     }
 
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
     public String phrase() {
 
         String result = super.phrase();

@@ -16,6 +16,17 @@ public abstract class Domestic extends Animal {
     public Domestic() {
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
     public String phrase() {
         String result = super.phrase();
         if (name != null) {
