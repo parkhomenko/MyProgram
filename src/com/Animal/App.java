@@ -1,7 +1,9 @@
 package com.Animal;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Mike on 1/12/2016.
@@ -9,6 +11,8 @@ import java.util.List;
 public class App {
     public static void main(String[] args) {
         Animal bob = new Dog(1, 10, 20, "white", "Bob", true, true);
+        Animal bob1 = new Dog(1, 10, 20, "white", "Bob", true, true);
+        Animal bob2 = new Dog(1, 10, 20, "black", "Bob", true, true);
         // bob.voice();
 //        System.out.println();
         Cat puss = new Cat(2, 10, 20, "gray", "Barsik", true);
@@ -22,16 +26,21 @@ public class App {
 //        System.out.println();
 //        Fish nemo=new Fish(1,2,3,"gold","Nemo",true);
 //        nemo.voice();
+        Map <Animal,Animal> zoo = new HashMap();
+        zoo.put(bob,bob);
+        zoo.get(bob).voice();
 
+//        List<Animal> arr = new ArrayList();
+//        arr.add(bob);
+//        arr.add(puss);
+//        arr.add(giraffe);
+//
+//        for (Animal item:arr) {
+//            item.voice();
+//        }
 
-        List<Animal> arr = new ArrayList();
-        arr.add(bob);
-        arr.add(puss);
-        arr.add(giraffe);
+        System.out.println(bob.equals(croc));
 
-        for (Animal item:arr) {
-            item.voice();
-        }
     }
 
 }

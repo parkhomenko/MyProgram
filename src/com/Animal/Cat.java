@@ -14,7 +14,9 @@ public class Cat extends Domestic {
 
     @Override
     public boolean equals(Object o) {
+
         return super.equals(o);
+
     }
 
     @Override

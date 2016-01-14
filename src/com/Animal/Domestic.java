@@ -19,7 +19,9 @@ public abstract class Domestic extends Animal {
 
     @Override
     public boolean equals(Object o) {
-        return super.equals(o);
+        if (getName().equals(this.getName())) {
+            return super.equals(o);
+        }else return false;
     }
 
     @Override

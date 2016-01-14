@@ -16,6 +16,10 @@ public class Wild extends Animal {
 
     }
 
+    @Override
+    public void voice() {
+        super.voice();
+    }
 
     @Override
     public boolean equals(Object o) {
