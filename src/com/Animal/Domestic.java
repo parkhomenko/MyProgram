@@ -7,8 +7,8 @@ public abstract class Domestic extends Animal {
     private String name;
     private boolean isVaccinated;
 
-    public Domestic(int id, int age, double weight, String color, String name, boolean isVaccinated) {
-        super(id, age, weight, color);
+    public Domestic(int id, int age, double weight, String color, String type,String name, boolean isVaccinated) {
+        super(id, age, weight, color,type);
         this.name = name;
         this.isVaccinated = isVaccinated;
     }

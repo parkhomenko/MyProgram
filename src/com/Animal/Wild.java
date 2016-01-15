@@ -7,8 +7,8 @@ public class Wild extends Animal {
 
     private boolean isPredator;
 
-    public Wild(int id, int age, double weight, String color, boolean isPredator) {
-        super(id, age, weight, color);
+    public Wild(int id, int age, double weight, String color, String type, boolean isPredator) {
+        super(id, age, weight, color, type);
         this.isPredator = isPredator;
     }
 

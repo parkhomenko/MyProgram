@@ -8,12 +8,14 @@ public abstract class Animal {
     private int age;
     private double weight;
     private String color;
+    private String type;
 
-    public Animal(int id, int age, double weight, String color) {
+    public Animal(int id, int age, double weight, String color, String type) {
         this.id = id;
         this.age = age;
         this.weight = weight;
         this.color = color;
+        this.type = type;
     }
 
     public Animal() {
@@ -37,8 +39,16 @@ public abstract class Animal {
         if (getId() != animal.getId()) return false;
         if (getAge() != animal.getAge()) return false;
         if (Double.compare(animal.getWeight(), getWeight()) != 0) return false;
-        return getColor().equals(animal.getColor());
+        if (getColor() != null ? !getColor().equals(animal.getColor()) : animal.getColor() != null) return false;
+        return !(getType() != null ? !getType().equals(animal.getType()) : animal.getType() != null);
 
+    }
+
+
+
+
+    public String getType() {
+        return type;
     }
 
     @Override

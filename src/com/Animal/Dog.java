@@ -7,8 +7,8 @@ public class Dog extends Domestic implements Roarable{
     boolean isTrained;
 
 
-    public Dog(int id, int age, double weight, String color, String name, boolean isVaccinated, boolean isTrained) {
-        super(id, age, weight, color, name, isVaccinated);
+    public Dog(int id, int age, double weight, String color, String type, String name, boolean isVaccinated, boolean isTrained) {
+        super(id, age, weight, color, type, name, isVaccinated);
         this.isTrained = isTrained;
     }
 
