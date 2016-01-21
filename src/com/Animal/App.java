@@ -27,9 +27,18 @@ public class App {
 //        Fish nemo=new Fish(1,2,3,"gold","Nemo",true);
 //        nemo.voice();
         Map <Animal,Animal> zoo = new HashMap();
-        zoo.put(bob,bob);
-        zoo.get(bob).voice();
 
+        for (int i =0; i<1000; i++){
+            Animal bob3 = new Dog(i, i, i, "black", "Bob","Buldog", true, true);
+
+        zoo.put(bob3,bob3);
+        }
+       double start = System.currentTimeMillis();
+        zoo.get(bob3).voice();
+        double stop = System.currentTimeMillis();
+
+
+        System.out.println(start-stop);
 //        List<Animal> arr = new ArrayList();
 //        arr.add(bob);
 //        arr.add(puss);
@@ -39,7 +48,7 @@ public class App {
 //            item.voice();
 //        }
 
-        System.out.println(bob.equals(croc));
+
 
     }
 

@@ -55,12 +55,12 @@ public abstract class Animal {
     public int hashCode() {
         int result;
         long temp;
-        result = getId();
-        result = 31 * result + getAge();
-        temp = Double.doubleToLongBits(getWeight());
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
-        result = 31 * result + getColor().hashCode();
-        return result;
+//        result = getId();
+//        result = 31 * result + getAge();
+//        temp = Double.doubleToLongBits(getWeight());
+//        result = 31 * result + (int) (temp ^ (temp >>> 32));
+//        result = 31 * result + getColor().hashCode();
+        return 5;
     }
 
     public int getId() {
