@@ -37,6 +37,16 @@ public class Dog extends Domestic implements Roarable{
     }
 
     @Override
+    public String getName() {
+        return super.getName();
+    }
+
+    @Override
+    public int getAge() {
+        return super.getAge();
+    }
+
+    @Override
     public void roar() {
         System.out.println("Dog Roar");
     }
