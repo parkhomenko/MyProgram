@@ -22,15 +22,17 @@ public class GenericsApp {
 
         int firstNumber = array[0];
         int secondNumber = array.length;
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < array.length; i++) { //лучше испольовать переменную, чем еще раз вызывать array.length
+            //не понятна сразу эта проверка, нужно вынести в отдельную функцию и назвать, что она делает
             if (firstNumber + secondNumber == N) {
                 System.out.print("first number " + " " + firstNumber + " " + "second number = " + secondNumber);
-                break;
+                break; //если у тебя после цикла ничего нет, и ты сразу выходишь из функции, делай сразу return
             }
-            if (checkN(array,N) ==true){
+            //хорошо, что вынес в отдельную функцию
+            if (checkN(array,N) ==true){ //проверка на true здесь лишняя, сама функция возвращает true или false (удали "== true")
                 System.out.println("There are no such numbers");
-                break;
-            }else if (N > array.length) {
+                break; //лучше return вместо break
+            }else if (N > array.length) { //лучше не использовать вложенные if, если можно обойтись
 
                 firstNumber = array[i + 1];
             } else {
@@ -39,7 +41,9 @@ public class GenericsApp {
         }
     }
 
+    //checkN - поменяй название на более понятное, пусть лучше будет несколько слов, но они четко определяют что делает функция
     public static boolean checkN(int array[], int N){
+        //слишком сложное выражение - замени на 2 функции, одна до ||, вторая - после
         return((array.length + (array.length - 1) < N)|| ((array[0] + array[1]) > N));
 
 
